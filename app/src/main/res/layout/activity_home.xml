@@ -4,15 +4,115 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.neokotlinui.HomeActivity">
+    android:background="@color/light_gray_background"
+    android:padding="16dp"
+    tools:context=".HomeActivity">
 
     <TextView
+        android:id="@+id/tv_welcome_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home Screen"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Welcome Back"
+        android:textColor="@color/dark_text_welcome"
+        android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_choose_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Choose a service below"
+        android:textColor="@color/medium_gray_text_welcome"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_welcome_back" />
+
+    <ImageView
+        android:id="@+id/iv_top_right_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/drawable_oval_placeholder_white"
+        android:src="@drawable/ic_exit"
+        android:padding="8dp"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="Exit application icon" />
+    <!-- Note: Ensure ic_exit drawable exists in res/drawable -->
+
+    <!-- Grid of Services -->
+    <LinearLayout
+        android:id="@+id/services_grid_row1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_choose_service">
+
+        <!-- Doctors Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_doctors"
+            style="@style/ServiceCardStyle"
+            app:cardBackgroundColor="@android:color/white">
+            <LinearLayout style="@style/ServiceCardInnerLayoutStyle">
+                <ImageView style="@style/ServiceCardIconStyle" android:contentDescription="Doctors Icon"/>
+                <TextView style="@style/ServiceCardTitleStyle" android:text="Doctors"/>
+                <TextView style="@style/ServiceCardSubtitleStyle" android:text="View our specialists"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Facilities Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_facilities"
+            style="@style/ServiceCardStyle"
+            app:cardBackgroundColor="@android:color/white">
+            <LinearLayout style="@style/ServiceCardInnerLayoutStyle">
+                <ImageView style="@style/ServiceCardIconStyle" android:contentDescription="Facilities Icon"/>
+                <TextView style="@style/ServiceCardTitleStyle" android:text="Facilities"/>
+                <TextView style="@style/ServiceCardSubtitleStyle" android:text="Explore our clinic"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/services_grid_row2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/services_grid_row1">
+
+        <!-- Specialities Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_specialities"
+            style="@style/ServiceCardStyle"
+            app:cardBackgroundColor="@android:color/white">
+            <LinearLayout style="@style/ServiceCardInnerLayoutStyle">
+                <ImageView style="@style/ServiceCardIconStyle" android:contentDescription="Specialities Icon"/>
+                <TextView style="@style/ServiceCardTitleStyle" android:text="Specialities"/>
+                <TextView style="@style/ServiceCardSubtitleStyle" android:text="Our services"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Book Now Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_book_now"
+            style="@style/ServiceCardStyle"
+            app:cardBackgroundColor="@color/purple_button_welcome">
+            <LinearLayout style="@style/ServiceCardInnerLayoutStyle">
+                <ImageView style="@style/ServiceCardIconStyle"
+                    android:backgroundTint="#9E89FF" />
+                <TextView style="@style/ServiceCardTitleStyle" android:text="Book Now" android:textColor="@android:color/white"/>
+                <TextView style="@style/ServiceCardSubtitleStyle" android:text="Schedule appointment" android:textColor="@android:color/white"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

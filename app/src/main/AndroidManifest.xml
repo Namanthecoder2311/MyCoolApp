@@ -11,17 +11,49 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NeoKotlinUIConverted">
+
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.neokotlinuiconverted.PlaceholderActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.neokotlinuiconverted.OldComposeMainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.neokotlinui.WelcomeActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.NeoKotlinUIConverted">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.neokotlinui.MainActivity"
+            android:exported="false"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.example.neokotlinui.HomeActivity"
+            android:exported="false"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.example.neokotlinui.BookingActivity"
+            android:exported="false"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.example.neokotlinui.DoctorsActivity"
+            android:exported="false"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.example.neokotlinui.FacilitiesActivity"
+            android:exported="false"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.example.neokotlinui.SpecialitiesActivity"
+            android:exported="false"
+            android:label="@string/app_name" />
+
     </application>
 
 </manifest>

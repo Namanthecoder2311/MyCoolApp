@@ -20,11 +20,13 @@
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
+            android:background="@color/light_gray_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
-            <!-- Placeholder, replace with actual images later -->
+        <!-- Note: android:background added for runtime safety -->
+        <!-- Placeholder, replace with actual images later -->
 
         <TextView
             android:id="@+id/tv_facility_name"
