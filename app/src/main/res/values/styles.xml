@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- You can define specific widget styles or text appearances here if needed -->
+    <!-- For example:
+    <style name="MyTextViewStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/purple_700</item>
+    </style>
+    -->
+</resources>

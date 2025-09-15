@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/neumorphic_card_bg"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/iv_speciality_icon_placeholder"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/drawable_oval_placeholder_light_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_speciality_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/dark_text_welcome"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_speciality_icon_placeholder"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="General Dentistry" />
+
+    <TextView
+        android:id="@+id/tv_speciality_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/medium_gray_text_welcome"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_speciality_icon_placeholder"
+        app:layout_constraintTop_toBottomOf="@id/tv_speciality_name"
+        tools:text="Routine check-ups, cleanings, and preventive care" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
