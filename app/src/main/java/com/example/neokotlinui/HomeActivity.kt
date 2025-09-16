@@ -33,11 +33,18 @@ class HomeActivity : AppCompatActivity() {
         }
 
         // Navigation for Specialities Card
-        val specialitiesCard: CardView = findViewById(R.id.card_specialities) // Added
-        specialitiesCard.setOnClickListener {                                  // Added
-            val intent = Intent(this, SpecialitiesActivity::class.java)    // Added
-            startActivity(intent)                                              // Added
-        }                                                                      // Added
+        val specialitiesCard: CardView = findViewById(R.id.card_specialities)
+        specialitiesCard.setOnClickListener {                                  
+            val intent = Intent(this, SpecialitiesActivity::class.java)    
+            startActivity(intent)                                              
+        }                                                                      
+
+        // Navigation for Book Now Card
+        val bookNowCard: CardView = findViewById(R.id.card_book_now) // Added
+        bookNowCard.setOnClickListener {                                // Added
+            val intent = Intent(this, BookingActivity::class.java)  // Added
+            startActivity(intent)                                        // Added
+        }                                                                // Added
     }
 
     private fun showExitConfirmationDialog() {

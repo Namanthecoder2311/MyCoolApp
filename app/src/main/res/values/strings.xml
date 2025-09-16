@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">NeoKotlinUIConverted</string>
+
+    <!-- Strings for My Appointments Screen -->
+    <string name="title_my_appointments">My Appointments</string>
+    <string name="desc_no_appointments">No appointments icon</string>
+    <string name="no_appointments_yet">No Appointments Yet</string>
+    <string name="book_one_to_see_it_here">Book an appointment to see it here.</string>
+    <string name="desc_add_new_appointment">Book new appointment</string>
+
+    <!-- Strings for Appointment Item -->
+    <string name="desc_appointment_icon">Appointment type icon</string>
+    <string name="desc_cancel_appointment">Cancel appointment</string>
+
+    <!-- Strings for Booking Confirmation Dialog -->
+    <string name="booking_success_title">Booking Confirmed!</string>
+    <string name="booking_success_message">Your appointment has been successfully booked.</string>
+    <string name="view_appointments_button">View Appointments</string>
+    <string name="ok_button">OK</string>
+
+    <!-- Strings for Appointment Statuses -->
+    <string name="status_booked">BOOKED</string>
+    <string name="status_cancelled">CANCELLED</string>
+    <string name="status_completed">COMPLETED</string>
+
+    <!-- Strings for Cancel Appointment Confirmation Dialog -->
+    <string name="cancel_appointment_title">Cancel Appointment?</string>
+    <string name="cancel_appointment_message">Are you sure you want to cancel your appointment with %1$s on %2$s?</string>
+    <string name="action_cancel_appointment">Yes, Cancel</string>
+    <string name="action_keep_appointment">No, Keep It</string>
+
+    <!-- Strings for Delete Appointment Confirmation Dialog -->
+    <string name="delete_appointment_title">Delete Appointment?</string>
+    <string name="delete_appointment_message">Permanently delete your appointment with %1$s on %2$s? This action cannot be undone.</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_dont_delete">Keep</string>
 </resources>

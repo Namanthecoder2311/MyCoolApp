@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp">
+
+    <ImageView
+        android:id="@+id/ivAppointmentIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_event_note_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvAppointmentDoctorName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Dr. Name"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/ivAppointmentIcon"
+        app:layout_constraintTop_toTopOf="@id/ivAppointmentIcon"
+        app:layout_constraintEnd_toStartOf="@id/ibCancelAppointment"/>
+
+    <TextView
+        android:id="@+id/tvAppointmentSpeciality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dentist"
+        app:layout_constraintStart_toStartOf="@id/tvAppointmentDoctorName"
+        app:layout_constraintTop_toBottomOf="@id/tvAppointmentDoctorName"/>
+
+    <TextView
+        android:id="@+id/tvAppointmentDateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12 Sep 2025, 11:00 AM"
+        app:layout_constraintStart_toStartOf="@id/tvAppointmentSpeciality"
+        app:layout_constraintTop_toBottomOf="@id/tvAppointmentSpeciality"/>
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipAppointmentStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BOOKED"
+        app:layout_constraintStart_toStartOf="@id/tvAppointmentDateTime"
+        app:layout_constraintTop_toBottomOf="@id/tvAppointmentDateTime"/>
+
+    <ImageButton
+        android:id="@+id/ibCancelAppointment"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_close"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout> 

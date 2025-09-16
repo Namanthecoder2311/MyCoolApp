@@ -39,7 +39,9 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#E0E0E0"  /> <!-- Placeholder color -->
+                    android:src="@drawable/dental_care_pro_logo" 
+                    android:scaleType="fitCenter"
+                    android:contentDescription="Application Logo" />
             </androidx.cardview.widget.CardView>
 
             <TextView
@@ -134,7 +136,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:background="#B0BEC5" /> <!-- Placeholder color -->
+                    android:src="@drawable/welcome_screen"
+                    android:contentDescription="Welcome screen image" />
             </androidx.cardview.widget.CardView>
 
             <Button

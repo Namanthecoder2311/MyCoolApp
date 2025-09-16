@@ -60,7 +60,10 @@
             style="@style/ServiceCardStyle"
             app:cardBackgroundColor="@android:color/white">
             <LinearLayout style="@style/ServiceCardInnerLayoutStyle">
-                <ImageView style="@style/ServiceCardIconStyle" android:contentDescription="Doctors Icon"/>
+                <ImageView 
+                    style="@style/ServiceCardIconStyle" 
+                    android:src="@drawable/doctor_logo" 
+                    android:contentDescription="Doctors Icon"/>
                 <TextView style="@style/ServiceCardTitleStyle" android:text="Doctors"/>
                 <TextView style="@style/ServiceCardSubtitleStyle" android:text="View our specialists"/>
             </LinearLayout>

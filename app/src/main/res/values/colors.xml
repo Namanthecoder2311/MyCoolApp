@@ -16,4 +16,14 @@
     <color name="soft_shadow_color">#20000000</color> <!-- semi-transparent black for soft shadows -->
     <color name="highlight_color">#20FFFFFF</color> <!-- semi-transparent white for highlights -->
 
+    <!-- Colors for My Appointments Screen & Items -->
+    <color name="chip_bg_booked">#E0E0E0</color> <!-- Light Gray for booked status -->
+    <color name="chip_text_booked">#333333</color> <!-- Dark text for booked status -->
+    <color name="chip_bg_cancelled">#FFCDD2</color> <!-- Light Red for cancelled status -->
+    <color name="chip_text_cancelled">#D32F2F</color> <!-- Dark Red for cancelled status -->
+    <color name="chip_bg_completed">#C8E6C9</color> <!-- Light Green for completed status -->
+    <color name="chip_text_completed">#388E3C</color> <!-- Dark Green for completed status -->
+    <color name="icon_tint_danger">#D32F2F</color> <!-- Red for cancel/delete icons -->
+    <color name="text_color_hint">#AAAAAA</color> <!-- A slightly lighter gray for hints or tertiary text -->
+
 </resources>
