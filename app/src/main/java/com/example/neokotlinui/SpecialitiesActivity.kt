@@ -34,32 +34,38 @@ class SpecialitiesActivity : AppCompatActivity() {
             Speciality(
                 id = UUID.randomUUID().toString(),
                 name = "General Dentistry",
-                description = "Routine check-ups, cleanings, and preventive care"
+                description = "Routine check-ups, cleanings, and preventive care",
+                imageName = null // Removed general_dentistry image
             ),
             Speciality(
                 id = UUID.randomUUID().toString(),
                 name = "Orthodontics",
-                description = "Braces, aligners, and teeth straightening treatments"
+                description = "Braces, aligners, and teeth straightening treatments",
+                imageName = null
             ),
             Speciality(
                 id = UUID.randomUUID().toString(),
                 name = "Oral Surgery",
-                description = "Tooth extractions, implants, and surgical procedures"
+                description = "Tooth extractions, implants, and surgical procedures",
+                imageName = null
             ),
             Speciality(
                 id = UUID.randomUUID().toString(),
                 name = "Periodontics",
-                description = "Gum disease treatment and periodontal care"
+                description = "Gum disease treatment and periodontal care",
+                imageName = null
             ),
             Speciality(
                 id = UUID.randomUUID().toString(),
                 name = "Cosmetic Dentistry",
-                description = "Veneers, whitening, and smile makeovers"
+                description = "Veneers, whitening, and smile makeovers",
+                imageName = null // Removed general_dentistry image
             ),
             Speciality(
                 id = UUID.randomUUID().toString(),
                 name = "Pediatric Dentistry",
-                description = "Specialized dental care for children and adolescents"
+                description = "Specialized dental care for children and adolescents",
+                imageName = null
             )
         )
     }

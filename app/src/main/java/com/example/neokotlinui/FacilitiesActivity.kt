@@ -37,25 +37,25 @@ class FacilitiesActivity : AppCompatActivity() {
                 id = UUID.randomUUID().toString(),
                 name = "Examination Rooms",
                 description = "State-of-the-art dental chairs with advanced diagnostic equipment",
-                imageName = "img_examination_rooms" // Ensure this drawable exists in res/drawable
+                imageName = "examination_rooms" 
             ),
             Facility(
                 id = UUID.randomUUID().toString(),
                 name = "Surgery Suite",
                 description = "Sterile surgical environment with latest medical technology",
-                imageName = "img_surgery_suite" // Ensure this drawable exists
+                imageName = "surgery_suite"
             ),
             Facility(
                 id = UUID.randomUUID().toString(),
                 name = "Digital Imaging",
                 description = "Advanced X-ray and 3D imaging technology for precise diagnosis",
-                imageName = "img_digital_imaging" // Ensure this drawable exists
+                imageName = "digital_imaging"
             ),
             Facility(
                 id = UUID.randomUUID().toString(),
                 name = "Reception Area",
                 description = "Comfortable waiting area designed for patient relaxation",
-                imageName = "img_reception_area" // Ensure this drawable exists
+                imageName = "reception_areas" // Changed to use reception_areas drawable
             )
         )
     }

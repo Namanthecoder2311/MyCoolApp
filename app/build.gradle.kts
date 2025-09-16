@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.google.ksp)   // This now loads KSP 2.0.21-1.0.25 via libs.versions.toml
+    // Removed: alias(libs.plugins.google.ksp)
 }
 
 android {
@@ -59,15 +59,21 @@ dependencies {
     implementation("io.insert-koin:koin-androidx-navigation:3.5.6") // For Jetpack Navigation
     implementation("io.insert-koin:koin-androidx-compose:3.5.6")    // For Jetpack Compose
 
-    // Room Database
-    val roomVersion = "2.6.1"
-    implementation("androidx.room:room-runtime:$roomVersion")
-    implementation("androidx.room:room-ktx:$roomVersion") // For Flow & suspend function support
-    add("ksp", "androidx.room:room-compiler:$roomVersion") // Annotation processor
+    // Unit test libs
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("androidx.arch.core:core-testing:2.2.0") // Added
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.1") // Updated
+    testImplementation("app.cash.turbine:turbine:1.0.0") // Added
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.1.0") // Updated
 
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    // instrumentation test dependencies
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test:runner:1.5.2")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.5.1")
+    androidTestImplementation("androidx.test.espresso:espresso-intents:3.5.1") // optional
+    androidTestImplementation("org.hamcrest:hamcrest:2.2")
+
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)

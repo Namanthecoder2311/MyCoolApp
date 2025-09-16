@@ -5,9 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat // For potential placeholder
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neokotlinui.model.Speciality
-import com.example.neokotlinuiconverted.R // Ensure this R is correct
+import com.example.neokotlinuiconverted.R
 
 class SpecialitiesAdapter(private val specialities: List<Speciality>) :
     RecyclerView.Adapter<SpecialitiesAdapter.SpecialityViewHolder>() {
@@ -28,16 +29,28 @@ class SpecialitiesAdapter(private val specialities: List<Speciality>) :
     class SpecialityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val nameTextView: TextView = itemView.findViewById(R.id.tv_speciality_name)
         private val descriptionTextView: TextView = itemView.findViewById(R.id.tv_speciality_description)
-        private val iconPlaceholderImageView: ImageView = itemView.findViewById(R.id.iv_speciality_icon_placeholder) // We have this in the layout
+        private val specialityImageView: ImageView = itemView.findViewById(R.id.iv_speciality_image) // New ImageView
 
         fun bind(speciality: Speciality) {
             nameTextView.text = speciality.name
             descriptionTextView.text = speciality.description
 
-            // The icon placeholder is already set by its background in list_item_speciality.xml
-            // If speciality.iconPlaceholder was intended to dynamically set an icon,
-            // that logic would go here, similar to how images were handled in FacilitiesAdapter.
-            // For now, it will just show the drawable_oval_placeholder_light_gray.
+            if (speciality.imageName != null) {
+                val imageResId = itemView.context.resources.getIdentifier(
+                    speciality.imageName, "drawable", itemView.context.packageName
+                )
+                if (imageResId != 0) {
+                    specialityImageView.setImageResource(imageResId)
+                    specialityImageView.visibility = View.VISIBLE
+                } else {
+                    // Image name provided but resource not found, hide image view
+                    specialityImageView.visibility = View.GONE
+                    // Optionally, log an error or set a default error placeholder
+                }
+            } else {
+                // No image name provided, hide image view
+                specialityImageView.visibility = View.GONE
+            }
         }
     }
 }

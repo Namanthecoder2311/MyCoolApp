@@ -4,5 +4,5 @@ data class Speciality(
     val id: String, // Or Int
     val name: String,
     val description: String,
-    val iconPlaceholder: String? = null // For potential future icon, not strictly needed for current design
+    val imageName: String? = null // To hold the drawable name for the main image
 )

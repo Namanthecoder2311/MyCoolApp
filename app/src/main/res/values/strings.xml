@@ -34,4 +34,7 @@
     <string name="delete_appointment_message">Permanently delete your appointment with %1$s on %2$s? This action cannot be undone.</string>
     <string name="action_delete">Delete</string>
     <string name="action_dont_delete">Keep</string>
+
+    <!-- String for Speciality Image Content Description -->
+    <string name="speciality_image_description">Image of the dental speciality</string>
 </resources>

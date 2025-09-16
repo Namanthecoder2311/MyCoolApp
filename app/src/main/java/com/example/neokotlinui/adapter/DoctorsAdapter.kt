@@ -31,7 +31,7 @@ class DoctorsAdapter(private val doctors: List<Doctor>) :
         private val specialityTextView: TextView = itemView.findViewById(R.id.tv_doctor_speciality)
         private val experienceTextView: TextView = itemView.findViewById(R.id.tv_doctor_experience)
         private val statusTextView: TextView = itemView.findViewById(R.id.tv_doctor_status)
-        private val imageView: ImageView = itemView.findViewById(R.id.iv_doctor_image) // Assuming you'll load images
+        private val imageView: ImageView = itemView.findViewById(R.id.iv_doctor_image)
 
         fun bind(doctor: Doctor) {
             nameTextView.text = doctor.name
@@ -44,32 +44,36 @@ class DoctorsAdapter(private val doctors: List<Doctor>) :
                     itemView.context,
                     R.drawable.drawable_status_available_bg
                 )
-                // Optionally change text color for available status if needed
-                 statusTextView.setTextColor(ContextCompat.getColor(itemView.context, R.color.dark_text_welcome)) // Or a specific green
+                statusTextView.setTextColor(ContextCompat.getColor(itemView.context, R.color.dark_text_welcome))
             } else {
                 statusTextView.text = "Busy"
                 statusTextView.background = ContextCompat.getDrawable(
                     itemView.context,
                     R.drawable.drawable_status_busy_bg
                 )
-                // Optionally change text color for busy status if needed
-                 statusTextView.setTextColor(ContextCompat.getColor(itemView.context, R.color.dark_text_welcome)) // Or a specific red/darker gray
+                statusTextView.setTextColor(ContextCompat.getColor(itemView.context, R.color.dark_text_welcome))
             }
 
-            // Image loading would go here. For now, it uses the placeholder from the XML.
-            // Example:
-            // if (doctor.imageName != null) {
-            //     val imageResId = itemView.context.resources.getIdentifier(
-            //         doctor.imageName, "drawable", itemView.context.packageName
-            //     )
-            //     if (imageResId != 0) {
-            //         imageView.setImageResource(imageResId)
-            //     } else {
-            //          imageView.setImageResource(R.drawable.drawable_oval_placeholder_light_gray) // Fallback
-            //     }
-            // } else {
-            //     imageView.setImageResource(R.drawable.drawable_oval_placeholder_light_gray) // Default placeholder
-            // }
+            // Set doctor image
+            if (doctor.name == "Dr. Sarah Johnson") {
+                imageView.setImageResource(R.drawable.doctor1) 
+                imageView.background = null 
+            } else if (doctor.name == "Dr. Michael Chen") {
+                imageView.setImageResource(R.drawable.doctor2) 
+                imageView.background = null
+            } else if (doctor.name == "Dr. James Wilson") {
+                imageView.setImageResource(R.drawable.doctor4)
+                imageView.background = null
+            } else if (doctor.name == "Dr. Emily Rodriguez") {
+                imageView.setImageResource(R.drawable.doctor3)
+                imageView.background = null
+            } else if (doctor.name == "Dr. Linda Karen") {
+                imageView.setImageResource(R.drawable.doctor5)
+                imageView.background = null
+            } else {
+                imageView.setImageDrawable(null)
+                imageView.background = ContextCompat.getDrawable(itemView.context, R.drawable.drawable_oval_placeholder_light_gray)
+            }
         }
     }
 }

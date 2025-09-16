@@ -9,29 +9,34 @@
     android:layout_marginEnd="16dp"
     android:layout_marginBottom="8dp"
     android:background="@drawable/neumorphic_card_bg"
-    android:padding="16dp">
+    android:paddingBottom="16dp">
 
     <ImageView
-        android:id="@+id/iv_speciality_icon_placeholder"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/drawable_oval_placeholder_light_gray"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/iv_speciality_image"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        tools:visibility="visible"
+        android:contentDescription="@string/speciality_image_description" />
 
     <TextView
         android:id="@+id/tv_speciality_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
         android:textColor="@color/dark_text_welcome"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/iv_speciality_icon_placeholder"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_speciality_image"
         tools:text="General Dentistry" />
 
     <TextView
@@ -40,12 +45,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
         android:textColor="@color/medium_gray_text_welcome"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/iv_speciality_icon_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_speciality_name"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:text="Routine check-ups, cleanings, and preventive care" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

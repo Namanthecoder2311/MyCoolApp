@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neokotlinui.BookingActivity // For FAB if you add it later
-import com.example.neokotlinui.appointments.data.local.Appointment
+import com.example.neokotlinui.appointments.model.Appointment // Updated import
 import com.example.neokotlinui.appointments.viewmodel.AppointmentEvent
 import com.example.neokotlinui.appointments.viewmodel.AppointmentViewModel
 import com.example.neokotlinuiconverted.R

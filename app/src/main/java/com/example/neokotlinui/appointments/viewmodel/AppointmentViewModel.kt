@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.neokotlinui.appointments.data.local.Appointment
-import com.example.neokotlinui.appointments.data.repository.IAppointmentRepository
+import com.example.neokotlinui.appointments.model.Appointment // Updated import
+import com.example.neokotlinui.appointments.data.AppointmentRepository // Updated import
 import kotlinx.coroutines.launch
 
 // Define possible UI events (for one-time actions like showing a toast)
@@ -15,17 +15,15 @@ sealed class AppointmentEvent {
     // Add other events like navigation if needed
 }
 
-class AppointmentViewModel(private val repository: IAppointmentRepository) : ViewModel() {
+class AppointmentViewModel(private val repository: AppointmentRepository) : ViewModel() { // Updated constructor
 
     // Expose a Flow of appointments as LiveData
-    val allAppointments: LiveData<List<Appointment>> = repository.getAllAppointments().asLiveData()
+    val allAppointments: LiveData<List<Appointment>> = repository.allAppointments.asLiveData() // Changed to use allAppointments from refactored repo
 
     // For one-time events
     private val _event = MutableLiveData<AppointmentEvent>()
     val event: LiveData<AppointmentEvent> = _event
 
-    // Example function to insert an appointment
-    // You'll call this from BookingActivity after validation
     fun insertAppointment(
         patientFullName: String,
         patientContactNumber: String,
@@ -34,7 +32,7 @@ class AppointmentViewModel(private val repository: IAppointmentRepository) : Vie
         doctorName: String,
         appointmentDateTime: Long, // Epoch time
         status: String,
-        notes: String?
+        notes: String? // This parameter is now unused for Appointment creation
     ) {
         if (patientFullName.isBlank() || speciality.isBlank() || doctorName.isBlank() || status.isBlank()) {
             _event.value = AppointmentEvent.ShowToast("Required fields are missing.")
@@ -48,13 +46,12 @@ class AppointmentViewModel(private val repository: IAppointmentRepository) : Vie
             speciality = speciality,
             doctorName = doctorName,
             appointmentDateTime = appointmentDateTime,
-            status = status,
-            notes = notes
+            status = status
+            // 'notes' field removed as it's not in the new model.Appointment
         )
-        viewModelScope.launch { // Use viewModelScope for coroutines tied to ViewModel lifecycle
+        viewModelScope.launch {
             repository.insertAppointment(newAppointment)
             _event.value = AppointmentEvent.ShowToast("Appointment Booked Successfully")
-            // You might want to navigate or trigger other UI changes here
         }
     }
 
@@ -67,7 +64,7 @@ class AppointmentViewModel(private val repository: IAppointmentRepository) : Vie
 
     fun deleteAppointment(appointment: Appointment) {
         viewModelScope.launch {
-            repository.deleteAppointment(appointment)
+            repository.deleteAppointmentById(appointment.id) // Changed to use deleteAppointmentById
             _event.value = AppointmentEvent.ShowToast("Appointment deleted.")
         }
     }

@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.neokotlinui.appointments.data.local.Appointment
+import com.example.neokotlinui.appointments.model.Appointment // Updated import
 import com.example.neokotlinuiconverted.R // Corrected R class import
 import com.example.neokotlinuiconverted.databinding.ItemAppointmentBinding // Correct ViewBinding import
 import java.text.SimpleDateFormat

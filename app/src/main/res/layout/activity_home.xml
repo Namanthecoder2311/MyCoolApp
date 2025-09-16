@@ -75,7 +75,10 @@
             style="@style/ServiceCardStyle"
             app:cardBackgroundColor="@android:color/white">
             <LinearLayout style="@style/ServiceCardInnerLayoutStyle">
-                <ImageView style="@style/ServiceCardIconStyle" android:contentDescription="Facilities Icon"/>
+                <ImageView 
+                    style="@style/ServiceCardIconStyle" 
+                    android:src="@drawable/facilities_logo"
+                    android:contentDescription="Facilities Icon"/>
                 <TextView style="@style/ServiceCardTitleStyle" android:text="Facilities"/>
                 <TextView style="@style/ServiceCardSubtitleStyle" android:text="Explore our clinic"/>
             </LinearLayout>
@@ -98,7 +101,10 @@
             style="@style/ServiceCardStyle"
             app:cardBackgroundColor="@android:color/white">
             <LinearLayout style="@style/ServiceCardInnerLayoutStyle">
-                <ImageView style="@style/ServiceCardIconStyle" android:contentDescription="Specialities Icon"/>
+                <ImageView 
+                    style="@style/ServiceCardIconStyle" 
+                    android:src="@drawable/facilities_logo" 
+                    android:contentDescription="Specialities Icon"/>
                 <TextView style="@style/ServiceCardTitleStyle" android:text="Specialities"/>
                 <TextView style="@style/ServiceCardSubtitleStyle" android:text="Our services"/>
             </LinearLayout>
@@ -110,8 +116,10 @@
             style="@style/ServiceCardStyle"
             app:cardBackgroundColor="@color/purple_button_welcome">
             <LinearLayout style="@style/ServiceCardInnerLayoutStyle">
-                <ImageView style="@style/ServiceCardIconStyle"
-                    android:backgroundTint="#9E89FF" />
+                <ImageView 
+                    style="@style/ServiceCardIconStyle"
+                    android:src="@drawable/booknow_logo"
+                    android:contentDescription="Book Now Icon" />
                 <TextView style="@style/ServiceCardTitleStyle" android:text="Book Now" android:textColor="@android:color/white"/>
                 <TextView style="@style/ServiceCardSubtitleStyle" android:text="Schedule appointment" android:textColor="@android:color/white"/>
             </LinearLayout>
